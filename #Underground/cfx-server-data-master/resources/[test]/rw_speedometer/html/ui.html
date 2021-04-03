@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>speedometer</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="">
+  	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  	<link rel="stylesheet" type="text/css" href="grid.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="main.js"></script>
+
+</head>
+<body>
+	<div id="ui">
+
+		<div class="carStats" style="display: none;">
+			<div class="licznik" id="idLicznik" style="margin-top: 942px;color: #fff;margin-left: 870px;">
+				<div class="licznik2" id="idLicznik2">
+					<div class="speedometer">
+						<svg class="circle" width="100" height="100">
+
+							<circle class="progress progress-speed" stroke="url(#gradient)" stroke-width="0.6" style="stroke-opacity: 1;" fill="transparent" r="8" cx="15" cy="15" stroke-dasharray="60 20" stroke-dashoffset="0"/>
+							<defs>
+							</defs>
+						</svg>
+						<div class="text">
+							<span class="speed"></span>
+						</div>
+					</div>
+				</div>
+			</div>
+				<div class="wskazniki kolko" id="engine" style='background-image: url(img/vehicle/off.png); margin-left: 605px;margin-top: 505px;'>
+					<svg class="circle" width="40" height="40">
+						<defs>
+							
+						</defs>
+					</svg>
+				</div>
+				<div class="wskazniki kolko" id="lock" style="background-image: url(img/vehicle/unlocked.png);margin-left: 648px;margin-top: 505px;">
+					<svg class="circle" width="40" height="40">
+						<defs>
+
+						</defs>
+					</svg>
+				</div>
+				<div class="wskazniki kolko" id="fuel" style="background-image: url(img/vehicle/fuel.png);width:37px;height:35px;margin-top:507px;margin-left:812px;">
+					
+
+				</div>
+				<div class="wskazniki kolko" id="fuel" style="background-image: url(img/vehicle/km.png);width:38px;height:39px;margin-top:505px;margin-left:905px;">
+					
+
+				</div>
+				<div class="wskazniki kolko" id="fuel" style="background-image: url(img/vehicle/speed.png);margin-left:686px;margin-top: 507px;">
+					<svg class="circle" width="38" height="38">
+						<defs>
+
+						</defs>
+					</svg>
+				</div>
+		</div>
+
+
+  <p class="other" id="fueltext" style="display:none;color: #fff;position: absolute;bottom: 0;margin-left:1342px; z-index: 3;margin-bottom:2px;font-size:19px;" class="fuel">L</p>
+  
+  <p class="other" id="kmtext" style="display:none;color: #fff;position: absolute;bottom: 0;margin-left:1437px; z-index: 3;margin-bottom:2px;font-size:19px;" class="km">KM</p>
+	</div>
+	<div class="other" style="z-index: 0;width: 480px;
+  padding: 10px;
+  border: 2px solid #000;
+  margin-left: 1085px;display:none; background: url(https://img.doxylamin.pro/2019-12-17/ur3tjvW5Xk.png);position: absolute;bottom: 0; opacity: 0.8; border-radius: 3px;height: 34px;">
+
+
+</body>
+</html>

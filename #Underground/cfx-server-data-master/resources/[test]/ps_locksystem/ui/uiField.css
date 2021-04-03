@@ -1,0 +1,78 @@
+.mediaViewInfo {
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920___1;
+	--web-enable-deep-linking: true;
+}
+:root {
+	--web-view-ids: Web_1920___1;
+}
+body {
+	display: none;
+}
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	border: none;
+}
+#Web_1920___1 {
+	position: absolute;
+	box-sizing: border-box;
+	background: transparent;
+	width: 1920px;
+	height: 1080px;
+	overflow: hidden;
+	--web-view-name: Web 1920 – 1;
+	--web-view-id: Web_1920___1;
+	--web-enable-deep-linking: true;
+}
+.uiField {
+	position: absolute;
+	overflow: visible;
+	width: 420px;
+	height: 322.5px;
+	left: 20px;
+	top: 80px;
+}
+
+.lock {
+	position: absolute;
+	width: 80px;
+	height: 37px;
+	top: 219px;
+	left: 265px;
+
+	-moz-transform: rotate(349deg); 
+    -ms-transform: rotate(349deg); 
+    -o-transform: rotate(349deg); 
+    -webkit-transform: rotate(349deg); 
+    transform: rotate(349deg); 
+}
+
+.unlock {
+	position: absolute;
+	width: 80px;
+	height: 37px;
+	top: 266px;
+	left: 273px;
+
+	-moz-transform: rotate(349deg); 
+    -ms-transform: rotate(349deg); 
+    -o-transform: rotate(349deg); 
+    -webkit-transform: rotate(349deg); 
+    transform: rotate(349deg); 
+}
+
+.trunk {
+	position: absolute;
+	width: 80px;
+	height: 37px;
+	top: 315px;
+	left: 281px;
+
+	-moz-transform: rotate(349deg); 
+    -ms-transform: rotate(349deg); 
+    -o-transform: rotate(349deg); 
+    -webkit-transform: rotate(349deg); 
+    transform: rotate(349deg); 
+}

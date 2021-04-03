@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Ruluko);
+    @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+    [class*="fontawesome-"]:before {
+      font-family: 'FontAwesome', sans-serif;
+    }
+
+    * {
+      font-size: 100%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 100%;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      background: rgb(137, 193, 223);
+    }
+
+    body {
+      font-family: 'Ruluko', sans-serif;
+      font-size: 16px;
+      width: 100%;
+      margin: 0 auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+
+    body header {
+      top: 0;
+      margin: 0;
+      height: 4rem;
+      background: dodgerblue;
+      text-shadow: 0.5px 0.5px black;
+      box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
+      -webkit-transition: all 0.7s ease;
+      transition: all 0.7s ease;
+      z-index: 1;
+    }
+
+    body header h1 {
+      margin-left: 1.5rem;
+      color: whitesmoke;
+      line-height: 1rem;
+    }
+
+    body header h1 span {
+      float: right;
+      margin-right: 2rem;
+      font-size: 3rem;
+      line-height: 2rem;
+      cursor: pointer;
+    }
+
+    body h2 {
+      font-size: 1.75em;
+    }
+
+    main {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+    }
+
+    main .sidebar {
+      background: dodgerblue;
+      min-width: 180px;
+      max-width: 300px;
+      margin-bottom: 0;
+      color: whitesmoke;
+      text-shadow: 1px 1px #0d0d0d;
+      overflow: auto;
+      height: 9240px;
+    }
+
+    main .sidebar h2 {
+      text-align: center;
+      margin: 0;
+      padding: 1.2rem;
+      background: #323233;
+      color: #A6A5A4;
+      border-bottom: 2px solid #2F2F2F;
+    }
+
+    main .sidebar h2:after {
+      content: "The SideBar";
+    }
+
+    main .sidebar ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    main .sidebar li {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+      border-bottom: 2px solid #2F2F2F;
+    }
+
+    main .sidebar li:hover {
+      border-right: .5rem solid #81A4D4;
+      box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.4);
+    }
+
+    main .sidebar a {
+      color: whitesmoke;
+      display: block;
+      padding: 1.5em .2em;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.2em;
+      -webkit-transition: all 1s ease;
+      transition: all 1s ease;
+    }
+
+    main .sidebar a:before {
+      content: "SideBar";
+    }
+
+    main .sidebar a:hover {
+      color: #81A4D4;
+      margin-left: 1rem;
+    }
+
+    body>header {
+      height: 9rem;
+    }
+
+    body>header h1 {
+      line-height: 2rem;
+    }
+
+    body>header h1 span {
+      line-height: 8rem;
+    }
+
+    main {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+
+    main .sidebar {
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+    }
+
+    main .sidebar h2:after {
+      content: "The TopBar";
+      padding-left: .5rem;
+    }
+
+    main .sidebar ul li {
+      margin: 0;
+      list-style-type: none;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    main .sidebar ul li:last-child {
+      border-bottom: none;
+    }
+
+    main li {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 0;
+    }
+
+    main .sidebar a:before {
+      content: "";
+    }
+
+    #all-content {
+      flex: 1;
+    }
+
+    .info {
+      background-color: #294860;
+      border-radius: 20px;
+      /* The border-radius gives rounded corners.*/
+      color: white;
+      padding: 10px;
+      margin: 10px auto;
+    }
+
+    h2 {
+      margin: 10px;
+    }
+
+    .info {
+      background-color: #DFEAF1;
+      padding: 4px;
+      margin: 10px;
+      border-radius: 4px;
+      color: black;
+    }
+
+    */ .info-title {
+      font-size: 3em;
+      margin: 8px;
+      text-align: center;
+      color: #294860;
+    }
+
+    .info-description {
+      font-weight: lighter;
+      /* this makes the font a bit less dark */
+      font-size: 1.3em;
+      margin: 6px;
+    }
+	
+		    .blog-title {
+      font-size: 2.5em;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1 class="blog-title">Strafen</h1>
+  </header>
+  <main>
+    <div class="sidebar">
+      <div class="TOC">
+     <!--   <h1>Table of Contents</h1>
+        <!-- Below this is a <ol> element. "ol" stands for "ordered list." -->
+        <ol>
+          <!-- <li> means "list item" -->
+          <li>
+            <a href="#info-1">Strafkatalog</a>
+            <!-- Next I add an "unordered list" within the "list item" of my "ordered list" -->
+            <ul>
+              <li>
+                <a href="#info-1-1">Missbrauch der Hupe</a>
+              </li>
+              <li>
+                <a href="#info-1-2">Vorfahrtstraße missachtet</a>
+              </li>
+              <li>
+                <a href="#info-1-3">Gegenverkehr</a>
+              </li>
+              <li>
+                <a href="#info-1-4">Unbefugtes Wenden</a>
+              </li>
+              <li>
+                <a href="#info-1-5">Off-Road fahren</a>
+              </li>
+              <li>
+                <a href="#info-1-6">Sicherheitsrichtlinien missachtet</a>
+              </li>
+              <li>
+                <a href="#info-1-7">Gefährliches halten</a>
+              </li>
+              <li>
+                <a href="#info-1-8">Nicht erlaubtes parken</a>
+              </li>
+              <li>
+                <a href="#info-1-9">Nicht respektieren des Rechtsfahrgebotes</a>
+              </li>
+              <li>
+                <a href="#info-1-10">Nicht einhaltender Priorität eines Rettungsfahrzeuges</a>
+              </li>
+              <li>
+                <a href="#info-1-11">Nicht angehalten nach Aufforderung</a>
+              </li>
+              <li>
+                <a href="#info-1-12">Bei Rot über die Ampel</a>
+              </li>
+              <li>
+                <a href="#info-1-13">gefährliches Überholmanöver</a>
+              </li>
+              <li>
+                <a href="#info-1-14">Fahrzeug nicht Verkehrstauglich</a>
+              </li>
+              <li>
+                <a href="#info-1-15">Fahren ohne Lizenz</a>
+              </li>
+              <li>
+                <a href="#info-1-16">Hit and Run</a>
+              </li>
+              <li>
+                <a href="#info-1-17">zu schnell < 5 kmh</a>
+              </li>
+              <li>
+                <a href="#info-1-18">zu schnell 5-15 kmh</a>
+              </li>
+              <li>
+                <a href="#info-1-19">zu schnell 15-30 kmh</a>
+              </li>
+              <li>
+                <a href="#info-1-20">zu schnell > 30 kmh</a>
+              </li>
+              <li>
+                <a href="#info-1-21">Verkehrsbehinderung</a>
+              </li>
+              <li>
+                <a href="#info-1-22">Nicht Benutzung öffentlicher Straßen</a>
+              </li>
+              <li>
+                <a href="#info-1-23">Störung der öffentlichen Ordnung</a>
+              </li>
+              <li>
+                <a href="#info-1-24">Polizeieinsatz behindern</a>
+              </li>
+              <li>
+                <a href="#info-1-25">Beildigung an Zivilist</a>
+              </li>
+              <li>
+                <a href="#info-1-26">Polizist geringschätzen</a>
+              </li>
+              <li>
+                <a href="#info-1-27">verbale Bedrohung an Zivilist</a>
+              </li>
+              <li>
+                <a href="#info-1-28">verbale Bedrohung an Polizist</a>
+              </li>
+              <li>
+                <a href="#info-1-29">Illegale Demonstration</a>
+              </li>
+              <li>
+                <a href="#info-1-30">versuchte Bestechung</a>
+              </li>
+              <li>
+                <a href="#info-1-31">Mit Messer in der Stadt bewaffnet</a>
+              </li>
+              <li>
+                <a href="#info-1-32">Mit tötlicher Waffe bewaffnet </a>
+              </li>
+              <li>
+                <a href="#info-1-33">Unbefugter Besitz einer Waffe (Standard-Lizenz)</a>
+              </li>
+              <li>
+                <a href="#info-1-34">Illegale Waffe</a>
+              </li>
+              <li>
+                <a href="#info-1-35">Einbruch/Aufbruch</a>
+              </li>
+              <li>
+                <a href="#info-1-36">Autodiebstahl</a>
+              </li>
+              <li>
+                <a href="#info-1-37">Drogenverkauf</a>
+              </li>
+              <li>
+                <a href="#info-1-38">Drogen herstellen</a>
+              </li>
+              <li>
+                <a href="#info-1-39">Drogenbesitz</a>
+              </li>
+              <li>
+                <a href="#info-1-40">Zivile Geisel genommen</a>
+              </li>
+              <li>
+                <a href="#info-1-41">Geiselnahme</a>
+              </li>
+              <li>
+                <a href="#info-1-42">Waghalsiges Lenken</a>
+              </li>
+              <li>
+                <a href="#info-1-43">Ladenraub</a>
+              </li>
+              <li>
+                <a href="#info-1-44">Bankraub</a>
+              </li>
+              <li>
+                <a href="#info-1-45">Schießen auf Beamten</a>
+              </li>
+              <li>
+                <a href="#info-1-46">versuchterMord an Zivilisten</a>
+              </li>
+              <li>
+                <a href="#info-1-47">versuchter Mord an einem Beamten</a>
+              </li>
+              <li>
+                <a href="#info-1-48">Mord an Zivilisten</a>
+              </li>
+              <li>
+                <a href="#info-1-49">Mord an Beamten</a>
+              </li>
+              <li>
+                <a href="#info-1-50">versehentlicher Mord</a>
+              </li>
+              <li>
+                <a href="#info-1-51">Firmenbetrug</a>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div id="all-content">
+      <h1>Strafverfahren</h1>
+      <p>
+        Das Strafregister funktioniert wie folgt: Wenn Du erwischt wirst, wenn Du eine Straftat oder einen Verstoß begehst hast Du die Möglichkeit die Straft zu Zahlen
+		oder sie im Gefängnis abzusetzen. Dafür gibt es ein Strafkatalog. Strafen können dir Polizisten, das Fbi und die Admins ausstellen. Die Stafen sind an den Realen
+		Strafkatalog in den USA angepasst worden. Wenn dir eine Strafe zu unrecht erteilt worden ist, bitten wir dich in den Support zu kommen, um dir diese wieder zu entfernen.
+		Diese Strafen können aber nur entfernt werden wenn du ein Beweis dagegen hast. Außerdem solltest du dir den Polizisten merken, damit er dazugeholt werden kann.
+      </p>
+      <div class="info">
+        <h2 id="info-1">Straftkatalog</h2>
+        <div class="info" id="info-1-1">
+          <div class="info-title">           
+          </div>
+          <div class="info-description">
+            <p>
+			</br>Im Straftkatalog sind alle Stafen aufgelistet die auf dem Server gebehne werden können.
+			</br>Versuche nicht dadurch in den Schulden zu landen. Sei dir im Klaren was du tust. 
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="info" id="info-1-2">
+        <div class="info-title">
+          Missbrauchen der Hupe
+        </div>
+        <div class="info-description">
+          <p>
+			Hupe nicht unnötig um Leute zu Provozieren.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-3">
+        <div class="info-title">
+          gegenverkehr
+        </div>
+        <div class="info-description">
+          <p>
+			Gefärde keine anderen leute indem du im Gegenverkehr rumfährst.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-4">
+        <div class="info-title">
+          unbefugtes Wenden
+        </div>
+        <div class="info-description">
+          <p>
+			Wenden kannst du in makierten bereichen bei einer durchgezogennen lienie darfst du nicht zum Wenden überfahren.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-5">
+        <div class="info-title">
+          Off-Road fahren
+        </div>
+        <div class="info-description">
+          <p>
+			Fahre nicht Off-Road wenn es dir nicht erlaubt worden ist du hilfst damit der Natur und deinem Auto.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-6">
+        <div class="info-title">
+          Sicherheitsrichtlinien missachtet
+        </div>
+        <div class="info-description">
+          <p>
+			Halte dich einfach dan die gegebenen Linien die du auf der Fahrbahn siehst.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-7">
+        <div class="info-title">
+          Gefährliches halten
+        </div>
+        <div class="info-description">
+          <p>
+			Halte nicht an Stellen die nicht dafür geeignet sind du gefährdest nur dich und andere Personen.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-8">
+        <div class="info-title">
+          Rechtsfahrgebot
+        </div>
+        <div class="info-description">
+          <p>
+			Wenn du ein langsames Fahrzeug fährst halte dich möglichst weit rechts damit andere überholen können.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-9">
+        <div class="info-title">
+          Nicht einhaltender Priorität eines Rettungsfahrzeuges
+        </div>
+        <div class="info-description">
+          <p>
+		Sobalt du eine Sirene hörst oder ein Blaulicht siehst mache dem Fahrzeug platz, damit es schneller an ihren Einsatzort kommt.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-10">
+        <div class="info-title">
+          Nicht angehalten nach Aufforderung
+        </div>
+        <div class="info-description">
+          <p>
+			Wenn du von der Polizei oder vom Fbi aufgefordert wirst rechts ran zu fahren folge bitte diesen anweisungen.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-11">
+        <div class="info-title">
+          Bei Rot über die Ampel
+        </div>
+        <div class="info-description">
+          <p>
+			Halte dich an die StVO (Straßenverkehrs-Ordnung)
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-12">
+        <div class="info-title">gefährliches Überholmanöver</div>
+        <div class="info-description">
+          <p>
+			Gefärde keinen durch ein Überholen.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-13">
+        <div class="info-title">Fahrzeug nicht Verkehrstauglich</div>
+        <div class="info-description">
+          <p>
+		  Halte dein Fahrzeug gut in Schuss und Pflege es damit du keine anderen gefährdest.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-14">
+        <div class="info-title">Fahren ohne Lizenz</div>
+        <div class="info-description">
+          <p>
+			Befor du Fährst mache bitte erst einen Führerschein damit die Polizei weiß das du die Regeln beherschst.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-15">
+        <div class="info-title">Hit and Run</div>
+        <div class="info-description">
+          <p>
+			Fahre/Verletze niemanden ohne Grund und fahre dann weiter.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-16">
+        <div class="info-title">zu schnell 5 km/h</div>
+        <div class="info-description">
+          <p>
+			Halte dich an die Geschwindigkeitsbegrenzung.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-17">
+        <div class="info-title">zu schnell 5-15 km/h</div>
+        <div class="info-description">
+          <p>
+Halte dich an die Geschwindigkeitsbegrenzung.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-18">
+        <div class="info-title">zu schnell 15-30 km/h</div>
+        <div class="info-description">
+          <p>
+Halte dich an die Geschwindigkeitsbegrenzung.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-19">
+        <div class="info-title">zu schnell 30km/h</div>
+        <div class="info-description">
+          <p>
+Halte dich an die Geschwindigkeitsbegrenzung.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-20">
+        <div class="info-title">Verkehrsbehinderung</div>
+        <div class="info-description">
+          <p>
+			Halte nicht den Verkehr auf wegen dummen kleinichkeiten.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-21">
+        <div class="info-title">Nicht Benutzung öffentlicher Straßen</div>
+        <div class="info-description">
+          <p>
+			Fahre auf Straßen die vom Amt gebaut worden sind.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-22">
+        <div class="info-title">Störung der öffentlichen Ordung</div>
+        <div class="info-description">
+          <p>
+			Bleib ruhig und dreh die Musik im Auto nicht zu lauf auf, damit du keine andern Störst.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-23">
+        <div class="info-title">Polizeieinsatz behindern</div>
+        <div class="info-description">
+          <p>
+            Befolge den aufforderungen der Polizei.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-24">
+        <div class="info-title">Beleidigung an Zivilist</div>
+        <div class="info-description">
+          <p>
+			Seit net zu- und untereinander.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-25">
+        <div class="info-title">Polizist geringschätzen</div>
+        <div class="info-description">
+          <p>
+            Wiederspreche nicht dem Polizisten.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-26">
+        <div class="info-title">verbale bedrohung an Zivilist</div>
+        <div class="info-description">
+          <p>
+			Spreche keine Drohungen aus.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-27">
+        <div class="info-title">
+          Illegale Demonstration
+        </div>
+        <div class="info-description">
+          <p>
+            Eine Demonstration muss angemeldet sein.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-28">
+        <div class="info-title">
+          versuchte Bestechung 
+        </div>
+        <div class="info-description">
+          <p>
+           Erklärt sich von selber.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-29">
+        <div class="info-title">Mit Messer in der Stadt bewaffnet</div>
+        <div class="info-description">
+          <p>
+			Das Messer bzw. Klappmesser ist nicht zugelassen und somit verboten.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-30">
+        <div class="info-title">Mit tötlicher Waffe bewaffnet</div>
+        <div class="info-description">
+          <p>
+			Obwohl du ein Waffenschein besitzt darfst du die Waffe nru auf deinem eigenen Grundstück verwenden und bei dir haben.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-31">
+        <div class="info-title">Unbefugter Besitz einer Waffe</div>
+        <div class="info-description">
+          <p>
+            Um eine Waffe zu besitzen brauchst du den entprechenen Waffenschein.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-32">
+        <div class="info-title">
+          Illegale Waffe
+        </div>
+        <div class="info-description">
+          <p>
+            Dazu zählen alle Waffen die du nicht im Waffenshop kaufen kannst.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-33">
+        <div class="info-title">Einbruch/ Aufbruch</div>
+        <div class="info-description">
+          <p>
+			Beschädige nicht was dir nicht gehört oder Breche wo ein um Sachen aus dem Fahrzeug/Haus zu holen.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-34">
+        <div class="info-title">
+          Autodiebstahl
+        </div>
+        <div class="info-description">
+          <p>
+Klaue nicht das Auto von anderen du hast sehr warscheinlich dein eigenes. Und wenn nicht gibt es immernoch ein Taxi.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-35">
+        <div class="info-title">
+			Drogenverkauf
+        </div>
+        <div class="info-description">
+          <p>
+            Bleib auf dem Richtigen weg und verkaufe keine Drogen auch wenn sie gut Geld bringen, wenn du erwischt wirst ist dir das ncix mehr wert.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-36">
+        <div class="info-title">
+          Zivile Geisel genommen
+        </div>
+        <div class="info-description">
+          <p>
+			Nimm keine Leute als Geisel sie haben dir nix getan und können dafür nix das sie grade in soeineer Situation gelandet sind.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-37">
+        <div class="info-title">
+          Geiselnahme
+        </div>
+        <div class="info-description">
+          <p>
+			Nimm keine Leute als Geisel sie haben dir nix getan und können dafür nix das sie grade in soeineer Situation gelandet sind.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-38">
+        <div class="info-title">
+          Waghalsiges Lenken
+        </div>
+        <div class="info-description">
+          <p>
+            Gefärde keine anderen Personen/ Verkehrsteilnehemer.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-39">
+        <div class="info-title">
+          Ladenraub
+        </div>
+        <div class="info-description">
+          <p>
+            Lass den alten Mann in ruhe und stehle ihm nicht sien Geld.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-40">
+        <div class="info-title">
+          Bankraub
+        </div>
+        <div class="info-description">
+          <p>
+            Ist zwar schön dasd ganze Geld aber auch leider Illegal es zu stehlen.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-41">
+        <div class="info-title">
+          Schießen auf Beamten
+        </div>
+        <div class="info-description">
+          <p>
+		  Gewalt ist keine lösung lass die Waffe weg.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-42">
+        <div class="info-title">
+          Versuchter Mord an Zivilisten
+        </div>
+        <div class="info-description">
+          <p>
+			Erklärt sich glaube von selbst.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-43">
+        <div class="info-title">
+          Versuchter Mord an Beamten
+        </div>
+        <div class="info-description">
+          <p>
+			Erklärt sich glaube auch von selbst.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-44">
+        <div class="info-title">
+          Mord an Zivilist
+        </div>
+        <div class="info-description">
+          <p>
+			Töte keine leute sie haben warscheinlich Familie.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-45">
+        <div class="info-title">
+          Mord an Beamten
+        </div>
+        <div class="info-description">
+          <p>
+			Töte keine leute sie haben warscheinlich Familie.
+
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-46">
+        <div class="info-title">
+          versehentlicher Mord
+        </div>
+        <div class="info-description">
+          <p>
+            Tja da hast du dann ganz schön pech gehabt das gleibt dann bei keiner Geld oder Gefängnis Strafte mehr.
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-47">
+        <div class="info-title">
+          Firmenbetrug
+        </div>
+        <div class="info-description">
+          <p>
+			Betrüge nicht deine Firma oder nimm dir einfach Geld aus der Kasse.
+			
+          </p>
+        </div>
+      </div>
+      <!--  -->
+    </div>
+  </main>
+</body>
+
+</html>

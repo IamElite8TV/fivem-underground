@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <style>
+    @import url(https://fonts.googleapis.com/css?family=Ruluko);
+    @import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+    [class*="fontawesome-"]:before {
+      font-family: 'FontAwesome', sans-serif;
+    }
+
+    * {
+      font-size: 100%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 100%;
+      height: 100%;
+      width: 100%;
+      box-sizing: border-box;
+      background: rgb(137, 193, 223);
+    }
+
+    body {
+      font-family: 'Ruluko', sans-serif;
+      font-size: 16px;
+      width: 100%;
+      margin: 0 auto;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+    }
+
+    body header {
+      top: 0;
+      margin: 0;
+      height: 4rem;
+      background: dodgerblue;
+      text-shadow: 0.5px 0.5px black;
+      box-shadow: 0 8px 6px -6px rgba(0, 0, 0, 0.3);
+      -webkit-transition: all 0.7s ease;
+      transition: all 0.7s ease;
+      z-index: 1;
+    }
+
+    body header h1 {
+      margin-left: 1.5rem;
+      color: whitesmoke;
+      line-height: 1rem;
+    }
+
+    body header h1 span {
+      float: right;
+      margin-right: 2rem;
+      font-size: 3rem;
+      line-height: 2rem;
+      cursor: pointer;
+    }
+
+    body h2 {
+      font-size: 1.75em;
+    }
+
+    main {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+      align-items: stretch;
+    }
+
+    main .sidebar {
+      background: dodgerblue;
+      min-width: 180px;
+      max-width: 250px;
+      margin-bottom: 0;
+      color: whitesmoke;
+      text-shadow: 1px 1px #0d0d0d;
+      overflow: auto;
+      height: 600px;
+    }
+
+    main .sidebar ul {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    main .sidebar li {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+      border-bottom: 2px solid #2F2F2F;
+    }
+
+    main .sidebar li:hover {
+      border-right: .5rem solid #81A4D4;
+      box-shadow: 0 6px 4px -4px rgba(0, 0, 0, 0.4);
+    }
+
+    main .sidebar a {
+      color: whitesmoke;
+      display: block;
+      padding: 1.5em .2em;
+      text-decoration: none;
+      text-align: center;
+      font-size: 1.2em;
+      -webkit-transition: all 1s ease;
+      transition: all 1s ease;
+    }
+
+    main .sidebar a:before {
+      content: "SideBar";
+    }
+
+    main .sidebar a:hover {
+      color: #81A4D4;
+      margin-left: 1rem;
+    }
+
+    body>header {
+      height: 9rem;
+    }
+
+    body>header h1 {
+      line-height: 2rem;
+    }
+
+    body>header h1 span {
+      line-height: 8rem;
+    }
+
+    main {
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+    }
+
+    main .sidebar {
+      -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+      flex-grow: 1;
+    }
+
+    main .sidebar ul li {
+      margin: 0;
+      list-style-type: none;
+      -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+    }
+
+    main .sidebar ul li:last-child {
+      border-bottom: none;
+    }
+
+    main li {
+      -webkit-box-flex: 1;
+      -ms-flex: 1 1 auto;
+      flex: 1 1 auto;
+      margin: 0;
+      padding: 0;
+    }
+
+    main .sidebar a:before {
+      content: "";
+    }
+
+    #all-content {
+      flex: 1;
+    }
+
+    .info {
+      background-color: #294860;
+      border-radius: 20px;
+      /* The border-radius gives rounded corners.*/
+      color: white;
+      padding: 10px;
+      margin: 10px auto;
+    }
+
+    h2 {
+      margin: 10px;
+    }
+
+    .info {
+      background-color: #DFEAF1;
+      padding: 4px;
+      margin: 10px;
+      border-radius: 4px;
+      color: black;
+    }
+
+    .info-title {
+      font-size: 3em;
+      margin: 8px;
+      text-align: center;
+      color: #294860;
+    }
+
+    .info-description {
+      font-weight: lighter;
+      /* this makes the font a bit less dark */
+      font-size: 1.3em;
+      margin: 6px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>DualGaming Regelwerk </h1>
+  </header>
+  <main>
+    <div class="sidebar">
+      <div class="TOC">
+        <h1></h1>
+        <!-- Below this is a <ol> element. "ol" stands for "ordered list." -->
+        <ol>
+          <!-- <li> means "list item" -->
+          <li>
+            <a href="#info-1">Regeln</a>
+            <!-- Next I add an "unordered list" within the "list item" of my "ordered list" -->
+            <ul>
+              <li>
+                <a href="#info-1-1">§1 - Allgemein: </a>
+              </li>
+              <li>
+                <a href="#info-1-2">§2 - Supportanliegen: </a>
+              </li>
+              <li>
+                <a href="#info-1-3">§3 - Unantastbarkeit: </a>
+              </li>
+              <li>
+                <a href="#info-1-4">§4 - RDM/VDM: </a>
+              </li>
+              <li>
+                <a href="#info-1-5">§5 - Namensgebung: </a>
+              </li>
+              <li>
+                <a href="#info-1-6">§6 - Realismus: </a>
+              </li>
+              <li>
+                <a href="#info-1-7">§7 - Metagaming: </a>
+              </li>
+              <li>
+                <a href="#info-1-8">§8 - Charakter: </a>
+              </li>
+              <li>
+                <a href="#info-1-9">§9 - Entführung / Geiselnahmen / Überfälle: </a>
+              </li>
+              <li>
+                <a href="#info-1-10">§10 - Whitelist-Fraktionen: </a>
+              </li>
+              <li>
+                <a href="#info-1-11">§11 - Gruppierungen: </a>
+              </li>
+              <li>
+                <a href="#info-1-12">§12 - Hinrichtungen: </a>
+              </li>
+              <li>
+                <a href="#info-1-13">§13 - New-Life: </a>
+              </li>
+              <li>
+                <a href="#info-1-14">§14 - Kommunikation: </a>
+              </li>
+              <li>
+                <a href="#info-1-15">§15 - Safezonen: </a>
+              </li>
+              <li>
+                <a href="#info-1-16">§16 - Streamen und Aufzeichnen: </a>
+              </li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div id="all-content">
+      <h1>Regelwerk</h1>
+      <p>
+        Dies sind unsere Server Regeln.
+      </p>
+      <div class="info">
+        <h2 id="info-1">Regeln</h2>
+        <div class="info" id="info-1-1">
+          <div class="info-title">
+            §1 - Allgemein
+          </div>
+          <div class="info-description">
+            <p>
+<br>- Die wichtigste Regel gleich am Anfang ist: Sei kein Idiot! Benutze deinen gesunden Verstand und behandle andere so wie du behandelt werden möchtest.
+<br>
+<br>- Anweisungen des Teams ist Folge zu leisten und müssen in jeder Hinsicht befolgt werden.
+<br>
+<br>- Das Ausnutzen von Bugs, Glitches, etc. ist untersagt. Solltet ihr jedoch einen Bug finden, meldet diesen bitte im Forum unter #Fehlermeldung
+<br>
+<br>- Rassismus, sexuelle Belästigung so wie Beleidigungen sind verboten. Ausnahmen sind: "seichte Beleidigungen" im Roleplay selbst.
+<br>
+<br>- Ein Mikrofon ohne Störgeräusche oder ähnlichem ist für ein gutes RolePlay unverzichtbar.
+<br>
+<br>- Modifikationen, Hacks, Cheats oder ähnliche Software um sich Vorteile gegenüber anderen Spielern auf dem Server zu verschaffen, sind verboten und werden mit einem Community-Ausschluss bestraft.
+<br>
+<br>- Wenn du im RolePlay bist wird sich nur RolePlay technisch unterhalten (Kein Out of Character usw.)
+<br>
+<br>- Das Scripted RolePlay ist auf unserem Server untersagt und ebenfalls unerwünscht.
+<br>
+<br>- Dein Leben ist dein höchstes Gut, der Tod ist deine größte Angst die du hast, verhalte dich auch dementsprechend.
+<br>
+<br>- Eine Person entscheidet, wenn er auf dem Boden liegt nicht selbst über seinen Tod.
+<br>
+<br>- Jeder Spieler auf dem Server ist im RolePlay gleich zu behandeln egal welchen Projektrang die Person hat.
+<br>
+<br>- Das Trollen von anderen Personen (dazu zählt auch das sinnlose Provozieren anderer) wird nicht geduldet und ist damit auch strengstens untersagt.
+<br>
+<br>- Das Ausloggen oder das absichtliche Fliehen aus einer RolePlay Situation ist strengstens untersagt (Combat-Logging.)
+<br>
+<br>- Bei Werbung oder Fremdwerbung ist mit einem permanenten Community-Ausschluss zu rechnen.
+<br>
+<br>- Jede Information die man nicht im RolePlay bekommt & trotzdem in seinem Roleplay nutzt, zählt als Metagaming und wird streng geahndet, darunter zählt auch das Stream snipen.
+<br>
+<br>- Sollte man plötzlich eine größere Summe an Geld besitzen, ohne etwas dafür getan zu haben, dann muss man sich dringend im Support melden. Dies gilt auch für teure Fahrzeuge, Flugzeuge usw. (Wenn man z.B.: für eine Autoreparatur hohe Beträge wie 45.000$ oder sogar mehr bekommt, dann sollte man diese Person umgehend im Support melden.)
+<br>
+<br>- Das Ingame-Internet ist nur für das Roleplay zu verwenden. Es darf kein Out of Character Material verwendet, eingestellt oder verbreitet werden. Dies betrifft auch Fotos und Videos. Ausgenommen hiervon wird auf das Roleplay bezogene Inhalte genutzt.
+<br>
+<br>- Begibst du dich bewusst in Lebensgefahr, kann es passieren, dass du stirbst (z.B. Wenn du in eine Gang-Hood fährst und die jeweillige Gang beleidigst bzw. dort Müll baust. Sprich in dem Falle braucht die Gang unter gewissen Umständen keine Schussankündigung, da das ihre hood ist bzw ihr Gebiet ist).
+<br>
+<br>- Das Ausnutzen von Lücken im Regelwerk wird bestraft.
+<br>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="info" id="info-1-2">
+        <div class="info-title">
+          §2 - Supportanliegen
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Jeder Supportfall muss innerhalb von 48 Stunden gemeldet werden.
+<br> 
+<br>- Ohne Beweise gibt es kein Support. (In einem Supportfall entscheidet die Support-Leitung, ob Zeugen als Beweis zählen.)
+<br>  (Weitere Regeln dazu stehen im Teamspeak unter Support Regeln!)
+<br>
+<br>- Wenn im laufenden RolePlay ein Supportfall ist, wird das RolePlay nicht unterbrochen, sondern weitergeführt! Ausnahme z.B. Wenn die jeweilige Support-Leitung sieht, dass das RolePlay so aussieht, dass eine Entführung gemacht wird, obwohl keine Cops im Dienst sind.
+<br>
+<br>- Support Gespräche und deren Inhalte werden nicht an dritter hand weitergegeben.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-3">
+        <div class="info-title">
+          §3 - Unantastbarkeit
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Die Mediziner sind während der Ausübung ihrer Arbeit unantastbar. Sollten diese sich selbst in Gefahr begeben entfällt die Unantastbarkeit.
+<br>
+<br>- Das Equipment der Medics, sowie deren Fahrzeuge, sind jeder Zeit unantastbar und dürfen nicht erpresst bzw. gestohlen werden.
+<br>
+<br>- Mediziner dürfen sich nicht in eine laufende Schiesserei einmischen. Tun sie das doch, so erlischt die Unantastbarkeit auch in Notfallmaßnahmen.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-4">
+        <div class="info-title">
+          §4 - RDM/VDM
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Unter RDM (Random DeathMatch) versteht man: Jemanden grundlos und ohne RolePlay Hintergrund und ohne Schussankündigung zu erschießen und ist strengstens untersagt. Eine Schussankündigung ist nach 15 Minuten nicht mehr gültig. Eine Schussankündigung ist nur gültig wenn es heisst: "... oder ich schieße", "... oder ich bringe dich um" usw.
+<br>
+<br>- Bei einer Gruppierung zählt eine Schussankündigung gegen die ganze Gruppe und nicht gegen vereinzelte Personen.
+<br>
+<br>- Das Überfahren anderer Spieler ist nur gestattet, wenn dieser sich nach mehrfacher Ankündigung nicht vom Fahrzeug weg begibt
+<br>
+<br>- Unfälle können passieren und werden nicht als VDM gesehen, sofern dies glaubwürdig bewiesen werden kann.
+<br>
+<br>- Das Tasern zählt nicht als Schussankündigung, jedoch muss der Taser angekündigt werden, sofern keine Gefahr im Verzug ist.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-5">
+        <div class="info-title">
+          §5 - Namensgebung
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Es muss sowohl ein Vor- als auch ein Nachname vorhanden sein.
+<br>
+<br>- Troll Namen werden nicht toleriert und werden eigenständig von uns Umgeändert.
+<br>
+<br>- Tags oder Abkürzungen für Spitznamen haben nichts im richtigen Namen zu suchen.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-6">
+        <div class="info-title">
+          §6 - Realismus
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Sollte sich ein Fahrzeug während einer Fahrt überschlagen oder einen Unfall haben, ist dieses nicht mehr fahrtüchtig (Bei einer Verfolgung oder Flucht müssen diese dann zu Fuß weiter geführt werden.) Je nach Schwere des Unfalls ist es eurem Charakter auch nicht mehr möglich, aufgrund schwerer Verletzungen, zu flüchten oder die Verfolgung fortzusetzen.
+<br>
+<br>- Spiel nicht den Superhelden, dein Körper besteht aus Fleisch und Blut, verhalte dich auch dementsprechend.
+<br>
+<br>- Nach Mehrmaligem Tasern besteht nicht mehr die Möglichkeit weiterzulaufen.
+<br>
+<br>- Wenn ein Großer Crash (z.B.: ein Autounfall mit massiven Schäden) entsteht, ist es verboten weiter zu fahren, man sollte sich der Realen Situation anpassen und sich hinlegen oder sich hinsetzen.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-7">
+        <div class="info-title">
+          §7 - Metagaming
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Das Nutzen von Informationen die ihr als Charakter nicht bekommen habt bzw. nicht wissen könnt zählt als Metagaming und wird damit auch bestraft.
+<br> (Beispiel Quellen: TeamSpeak, Discord, Steam, Streams o. ä.)
+<br>
+<br>- Solltet ihr aktiv auf dem Server spielen sind sämtliche Gespräche nebenher verboten (TeamSpeak, Discord, Skype) ausser der jeweilige Fraktionsfunk.
+<br>
+<br>- Das nutzen von Discord als Funk oder Messenger ist nur der Polizei und Medics gestattet. Bei allen anderen Spielern (gerade auch Gangs) wird dies als FailRP und Metagaming gewertet außer diese Fraktionen (Gangs, Mafia etc.) haben einen Funk von uns im Discord erhalten.
+<br>
+<br>- Das Feststellen von RolePlay Namen im (TeamSpeak, Discord) oder über sämtliche Menüs ist verboten.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-8">
+        <div class="info-title">
+          §8 - Charakter
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Es ist verboten sich als Police Officer oder Medic zu verkleiden oder sich auszugeben.
+<br>
+<br>- Als Polizist ist es untersagt, Waffen aus der Waffenkammer (Waffenausgabe, Polizeikontrollen etc.) in der eigenen Wohnung sprich mit zu sich im privaten Bereich zu nehmen und sie damit auch zu speichern.
+<br>
+<br>- Dein Carakter sollte möglichst keine Fehler enthalten z.B unsichtbare Arme, Hände, Beine etc. außer es ist der jeweiligen RP Situation angepasst.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-9">
+        <div class="info-title">
+          §9 - Entführung / Geiselnahmen / Überfälle
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Für eine Geiselnahme oder eine Entführung in Verbindung mit einer Staatsfraktion müssen mindestens 3 Polizisten im Dienst sein.
+<br>
+<br>- Bei einer Lösegeldforderung sollte man eine realistische Summe fordern (pro Kopf bis zu max. 20.000 $.)
+<br>
+<br>- Eine Geiselnahme, eine Entführung oder ein Überfall darf mindestens 60 Minuten vor Sonnenwende (Serverrestart) stattfinden.
+<br>
+<br>- Geiselnahmen muss eine RolePlay-Handlung zugrunde liegen. Forderungen an staatliche Einrichtungen (z.B.: LSPD, LSMC etc.) um sich zu bereichern, sind untersagt.
+<br>
+<br>- Während einer Geiselnahme oder eines Überfalls muss sichergestellt werden, dass das Gesagte von der gegnerischen Partei gehört und verstanden wird.
+<br>
+<br>- Orientiert euch an eurer eigenen Größe (Keinen Anfänger, der sein erstes Geld $ besitzt, überfallen.)
+<br>
+<br>- Es ist bei einer Entführung oder Geiselnahme nicht gestattet das Bankkonto leerzuräumen.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-10">
+        <div class="info-title">
+          §10 - Whitelist-Fraktionen
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Als Fraktion, Unternehmen gelten Gegenstände, die nur von der jeweiligen Fraktion bzw Unternehmen erworben werden können.
+<br>
+<br>- Ebenfalls ist es verboten die Fahrzeuge des LSPD, LSMC permanent weiterzugeben.
+<br>
+<br>- Der Missbrauch von Absperrungen der Staatsfraktionen (Blockieren von Türen, das Nutzen in Gebäuden und das Einbauen von Fahrzeugen o.ä.) ist strengstens untersagt.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-11">
+        <div class="info-title">
+          §11 - Gruppierungen
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Eine Gruppierung darf aus maximal 8 Personen bestehen. Staatsfraktionen sind davon nicht betroffen.
+<br>
+<br>- Eine Gang muss aus mindestens 3 Mitgliedern bestehen, sollte dies nicht der Fall sein kann die Fraktionsverwaltung diese Gang auflösen.
+<br>
+<br>- Fraktionssperre beträgt 3-6 Tage. (Nachdem man eine Fraktion verlassen hat, meldet man sich im Support und einigt sich in einem Gespräch.)
+<br>
+<br>- Sollte eure Verhandlung fehlschlagen und es kommt zu keinem Waffenstillstand, teilt dieses bitte dem Support mit, um möglicherweise einen Bandenkrieg beantragen zu können.
+<br>
+<br>- Eine Gruppierung muss sich permanent durch ein eindeutiges Erkennungsmerkmal (Farbe, Kleidung (Keine Accessoires) von Zivilisten unterscheiden. (Ausgenommen hiervon, wenn im Konzept vorgesehen, sind Zusammenschlüsse die im "Untergrund" agieren) solltet ihr Sabotageaktionen durchführen wollen, so könnt ihr eure Farbe ablegen. Ausnahme hierbei sind Gangkriege dort muss das eigene Erkennungsmerkmal getragen werden.
+<br>
+<br>- Sofern im Konzept vorgesehen, ist es Gruppierungen gestattet Bloodouts durchzuführen (Permanenter Tod des Charakters) dies muss offen zu jedem Mitglied kommuniziert werden.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-12">
+        <div class="info-title">
+          §12 - Hinrichtungen
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Eine Hinrichtung muss im Support beantragt werden beide Partein müssen damit einverstanden sein.
+<br>
+<br>- Eine Hinrichtung muss von min. einem Supporter genehmigt werden, um eine Hinrichtung gültig zu machen, müssen mehrere RolePlay Stränge mit dieser Person geführt worden sein und einen triftigen Grund haben (z.B.: Bloodout.)
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-13">
+        <div class="info-title">
+          §13 - New-Life
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Ihr könnt auf unserem Server nicht sterben, außer ihr werdet hingerichtet oder begeht suizid. Wenn ihr kein Leben mehr habt werdet ihr bewusstlos.
+<br>
+<br>- Alle Informationen die ihr wärend der Bewustlosigkeit erfahrt, dürfen nicht verwendet werden im weiteren verlauf des RolePlays.
+<br>
+<br>- Sollte ein Rettungshubschrauber euch abholen (Respawn am Krankenhaus) dürft ihr an der RolePlay Situation nicht mehr teilnehmen und euch den Ort für 15 Minuten nicht nähern. Ihr könnt euch nicht mehr an die Situation erinnern.
+<br>
+<br>- Wenn ihr bewusstlos seid, solltet ihr auf einen Medic warten. Ihr könnt aber auch sofort am Krankenhaus spawnen nach einer kurzen wartezeit. Verliert damit aber euer Bargeld und ebenfalls euer Inventar.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-14">
+        <div class="info-title">
+          §14 - Kommunikation
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Extreme Beleidigungen, wie Hu***sohn etc.; extreme politische Äußerungen; extremistische, rassistische & sexistische Inhalte sind untersagt.
+<br>
+<br>- Die RolePlay Bereiche im Forum werden auch als diese angesehen sollte man sich nicht daran halten zählt dies so als würde man im Spiel aus seiner Rolle fallen.
+<br>
+<br>- Das Nutzen von Stimmverzerren ist strengstens untersagt.
+<br>
+<br>- Ein Funk ist nur für die Staatsfraktionen genehmigt und dementsprechend verhält man sich auch in diesem Funk. (Ansonsten darf nur per Sprach-Chat Ingame geredet werden.)
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-15">
+        <div class="info-title">
+          §15 - Safezonen
+        </div>
+        <div class="info-description">
+          <p>
+<br>- In einer Safezone darf kein Spieler bedroht, getötet oder auch als Geisel genommen werden.
+<br>
+<br>- Fahrzeuge in einer Safezone dürfen nicht gestohlen oder anderweitig verwendet werden.
+<br> 
+<br>- Der Schutz der Safezone ist dann aufgehoben, wenn die Roleplay Situation außerhalb der Safezone begonnen hat oder es zu einer Eskalation innerhalb der Safezone kommt.
+<br>
+<br>- Fahrzeuge in einer Safezone dürfen von dem LSPD oder auch dem ACLS beschlagnahmt werden wenn diese eine gewisse zeit dort stehen ohne ein Anzeichen von einem Fahrer oder anderweitige Zeichen dass dieses Fahrzeug dort nur für eine gewisse Zeit steht.
+<br>
+          </p>
+        </div>
+      </div>
+      <div class="info" id="info-1-16">
+        <div class="info-title">
+          §16 - Streamen und Aufzeichnen
+        </div>
+        <div class="info-description">
+          <p>
+<br>- Das Streamen ist bei uns ohne Genehmigung oder Anmeldung erlaubt und auch erwünscht.
+<br>
+<br>- Solltet ihr in einem Support Gespräch sein, so ist der Stream unverzüglich zu muten.
+<br>
+<br>- Aufzeichnungen oder Stream Ausschnitte dienen im Support als Beweis.
+<br>
+<br>- Das Streamen von Gesprächen aus dem TeamSpeak oder Discord (außer Fraktionsfunk Kanäle) ist aus Datenschutzgründen strengstens verboten! Geht nicht immer davon aus, dass die anderen TeamSpeak oder Discord User damit einverstanden sind, bei euch im Stream hörbar zu sein.
+          </p>
+        </div>
+      </div>
+    </div>
+    </div>
+  </main>
+</body>
+
+</html>
